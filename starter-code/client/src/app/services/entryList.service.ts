@@ -24,7 +24,21 @@ export class EntryList {
     getEntryById(id: string ) {
       return this.http.get('http://localhost:3000/api/journal-entries'+"/"+id).pipe(
         map((entry) => entry.json()));
-      }    
+      }
+      
+    addEntry(title:string, content:string):Observable<object>{
+      const postData = {
+        title: title,
+        content: content
+      };
+      return this.http.post('http://localhost:3000/api/journal-entries', postData).pipe(
+        map( (res:Response) => {
+          const listas = res.json();
+          console.log(listas);
+          return listas;
+        })
+      )
+    }
 
 }
 

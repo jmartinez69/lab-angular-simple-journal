@@ -1,4 +1,7 @@
 <div>
+  <div *ngIf="displayForm === true"><app-entry-form-component ></app-entry-form-component>
+  </div>
+  <button (click)="activateForm()">Ingresar Datos</button>
   <div *ngFor = "let itemEntry of entryList">
       <p>Nombre: {{itemEntry.title}}</p>
       <p>Fecha: {{itemEntry.date}}</p>

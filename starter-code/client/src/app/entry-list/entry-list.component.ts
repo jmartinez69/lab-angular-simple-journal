@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EntryList } from '../services/entryList.service';
+import { EntryFormComponentComponent } from '../entry-form-component/entry-form-component.component';
 
 
 @Component({
@@ -9,12 +10,16 @@ import { EntryList } from '../services/entryList.service';
 })
 export class EntryListComponent implements OnInit {
 
+
   entryList: Array<any>;
+  displayForm: Boolean = false;
 
   constructor(public service: EntryList) {
     service.getEntries().subscribe((lista)  => this.entryList = lista)
   }
-  
+  activateForm(){
+    this.displayForm = !this.displayForm;
+  }
   ngOnInit() {
   }
 
