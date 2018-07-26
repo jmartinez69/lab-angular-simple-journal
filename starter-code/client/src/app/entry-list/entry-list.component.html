@@ -2,6 +2,7 @@
   <div *ngFor = "let itemEntry of entryList">
       <p>Nombre: {{itemEntry.title}}</p>
       <p>Fecha: {{itemEntry.date}}</p>
+      <a [routerLink]="['', itemEntry._id]">Detalle</a>
       <br><br>
   </div>
 </div>
