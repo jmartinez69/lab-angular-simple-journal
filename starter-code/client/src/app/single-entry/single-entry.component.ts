@@ -17,6 +17,7 @@ export class SingleEntryComponent implements OnInit {
       this.entryID =(params['id'])
     });
     service.getEntryById(this.entryID).subscribe((item)  => this.entry = item)
+
   }
 
   ngOnInit() {

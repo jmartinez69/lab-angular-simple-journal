@@ -15,6 +15,7 @@ export class EntryFormComponentComponent implements OnInit {
   submitForm(myForm){
     console.log(myForm);
     this.service.addEntry(this.title, this.content).subscribe();
+
   }
   ngOnInit() {
   }
